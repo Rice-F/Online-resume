@@ -1,0 +1,68 @@
+<html>
+<head>
+    <meta charset=utf-8>
+    <style>
+        #app {
+            width: 600px;
+            margin: 80px auto;
+        }
+        .newTask>input {
+            width: 100%;
+            height: 30px;
+            padding: 8px;
+            font-size: 14px;
+            color: 	#000080;
+            border: 1px solid #6495ED;
+            border-radius: 3px;
+        }
+        .todos {
+            color: #6495ED;
+            margin-left: -16px;
+        }
+        .todos li {
+            height: 40px;
+            line-height: 40px;
+        }
+        .todos input[type="checkbox"] {
+            /*-webkit-appearance: none;*/
+            display: inline-block;
+            margin-right: 20px;
+            vertical-align: middle;
+            /*width: 14px;*/
+            /*height: 14px;*/
+            /*border: 1px solid #6495ED;*/
+            /*background: #fff;*/
+        }
+        .todos span {
+            display: inline-block;
+            width: 100px;
+            text-align: center;
+        }
+        .todos button {
+            padding-bottom: 2px;
+            margin-left: 15px;
+            border: 1px solid #6495ED;
+            border-radius: 3px;
+            background: #6495ED;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div id="app">
+        <div class="newTask">
+            <input type="text" placeholder="请输入待办事项" v-model="newTodo" @keypress.enter="addTodo">
+        </div>
+        <ol class="todos">
+            <li v-for="todo in todoList">
+                <input type="checkbox" v-model="todo.done">{{todo.title}}
+                <span v-if="todo.done">已完成</span>
+                <span v-else>未完成</span>
+                <span>创建时间：</span>{{todo.createdAt}}
+                <button @click="removeTodo(todo)">x</button>
+            </li>
+        </ol>
+    </div>
+    <script src="bundle.js"></script>
+</body>
+</html>
