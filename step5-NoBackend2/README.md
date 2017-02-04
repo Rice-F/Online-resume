@@ -5,4 +5,4 @@
 4. open page.html
 
 # 预览
-https://rice-f.github.io/Online-resume/step4-NoBackend/page.html
+https://rice-f.github.io/Online-resume/step5-NoBackend2/page.html
