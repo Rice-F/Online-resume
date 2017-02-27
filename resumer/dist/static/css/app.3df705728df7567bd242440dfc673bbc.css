@@ -26,7 +26,7 @@
         align-self: center;
 }
 #resumeEditor {
-  width: 35%;
+  min-width: 35%;
   background: #444;
 }
 #resumePreview {
@@ -615,7 +615,53 @@ hr[data-v-53358100] {
 
 #resumePreview {
   background: #fff;
-  box-shadow: 0 1px 3px 0 rgba(0,0,0,0.25);
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.25);
+  padding: 2em;
+  color: #333;
+  ling-height: 1.2;
+  overflow: auto;
+}
+#resumePreview * {
+    box-sizing: border-box;
+    font-variant: normal;
+    font-weight: normal;
+}
+#resumePreview ol {
+    list-style: none;
+}
+#resumePreview section + section {
+    margin-top: 2em;
+}
+#resumePreview p {
+    white-space: pre-line;
+}
+#resumePreview section > h2:first-child {
+    background: #ddd;
+    display: inline-block;
+    padding: .2em;
+    margin-bottom: .5em;
+}
+#resumePreview section[data-name="profile"] > h1 {
+    margin: .1em 0;
+    font-size: 4em;
+}
+#resumePreview section[data-name="workHistory"] li + li,
+  #resumePreview section[data-name="projects"] li + li,
+  #resumePreview section[data-name="awards"] li + li {
+    margin-top: 1em;
+}
+#resumePreview section[data-name="workHistory"] li h3,
+  #resumePreview section[data-name="projects"] li h3,
+  #resumePreview section[data-name="awards"] li h3 {
+    border-bottom: 1px solid #999;
+    padding-bottom: .3em;
+    margin-bottom: .3em;
+}
+#resumePreview section[data-name="education"] li {
+    ling-height: 1.5;
+}
+#resumePreview section[data-name="contacts"] td:first-child {
+    padding-right: 1em;
 }
 
 h1[data-v-524cd6bc], h2[data-v-524cd6bc] {
@@ -633,4 +679,4 @@ a[data-v-524cd6bc] {
   color: #42b983;
 }
 
-/*# sourceMappingURL=app.1f7ba75818beaf39d1fe7478af62a0c3.css.map*/
+/*# sourceMappingURL=app.3df705728df7567bd242440dfc673bbc.css.map*/
