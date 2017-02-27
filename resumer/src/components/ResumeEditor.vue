@@ -17,7 +17,7 @@
           <div class="subitem" v-for="subitem in resume[item.field]">
             <div class="resumeField" v-for="(value,key) in subitem">
               <label>{{key}}</label>
-              <input type="text" :value="value">
+              <input type="text" v-model="subitem[key]">
             </div>
             <hr>
           </div>
@@ -27,10 +27,6 @@
           <input type="text" v-model="resume[item.field][key]">
         </div>
       </li>
-      <li>
-        {{count}}
-        <button @click="add">test</button>
-      </li>
     </ol>
   </div>
 </template>
@@ -39,14 +35,11 @@
   export default {
     name: 'ResumeEditor',
     computed: {
-      count(){
-        return this.$store.state.count;
-      },
       selected: {
         get(){
           return this.$store.state.selected;
         },
-        set(){
+        set(value){
           this.$store.commit('switchTab', value);
         }
       },
@@ -55,9 +48,6 @@
       }
     },
     methods: {
-      add(){
-        this.store.commit('increment');
-      }
     }
   }
 </script>
